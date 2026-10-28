@@ -1,0 +1,143 @@
+{
+  "product": "Codex Usage Card",
+  "version": "0.9.4",
+  "channel": "Beta public candidate",
+  "platform": "macOS",
+  "archive": "CodexUsageCard-macOS-0.9.4.zip",
+  "sha256": "e41cbb00fd01b785eb0cac73a946115a35dd2d9a2410c196ec7287ce4b1737f8",
+  "accepted_runtime_archive_sha256": "444dddbd0012ed5bb62c964241bb793dc29bec9d72867eb95ff2fe8755615cc4",
+  "revision": "Documentation-only repackage; no runtime build",
+  "files": 19,
+  "internal_sha256_entries": 18,
+  "changed_documents": [
+    "CHANGELOG.md",
+    "README.md",
+    "SECURITY.md",
+    "docs/macos.md"
+  ],
+  "non_document_payload_identical": true,
+  "archive_permissions_unchanged": true,
+  "original_MIT_license_unchanged": true,
+  "checks": {
+    "file_consistency": "PASS",
+    "privacy": "PASS",
+    "ZIP_CRC_and_SHA256_manifest": "PASS",
+    "functional_tests_repeated": false
+  },
+  "real_acceptance": {
+    "scope": "Installed and checked on one Mac; runtime bytes unchanged in this documentation revision",
+    "original_icon_launch": "PASS",
+    "automatic_Ring": "PASS",
+    "usage_readings": "PASS",
+    "UI_VERSION": 53,
+    "startup_experience": "A few seconds slower than the previous version; known experience difference",
+    "other_devices_and_future_versions": "UNVERIFIED"
+  },
+  "public_files": [
+    "README.md",
+    "docs/macos.md",
+    "SECURITY.md",
+    "CHANGELOG.md",
+    "LICENSE",
+    "docs/releases/macos-0.9.4.json",
+    "CodexUsageCard-macOS-0.9.4.zip",
+    "SHA256SUMS.txt"
+  ],
+  "archive_entries": [
+    {
+      "path": "CHANGELOG.md",
+      "sha256": "55700d2eee3fa42ce2df8863a937f24cdd1afc265344717695a520ae71028b09",
+      "mode": "0o644"
+    },
+    {
+      "path": "LICENSE",
+      "sha256": "4d8a4ca224f090dc1225e603aae39d6d4dbefa34dcf7515f70c886806329a755",
+      "mode": "0o644"
+    },
+    {
+      "path": "README.md",
+      "sha256": "5f300e5c33682ee1ae08341a42cfda58e08e5e7522a7f3d72ea00853f23ce3bf",
+      "mode": "0o644"
+    },
+    {
+      "path": "SECURITY.md",
+      "sha256": "6da10fe6d023a1e6d3daeff0220f61dd0b5ff4cb5b30b323ee908742f429b9be",
+      "mode": "0o644"
+    },
+    {
+      "path": "SHA256SUMS.txt",
+      "sha256": "796afa26985b1a338660821af0189be631fab5ea6c93cdf6220e7acc59168d7b",
+      "mode": "0o644"
+    },
+    {
+      "path": "agent.cjs",
+      "sha256": "2727a6e47c71503bbc8d2171520bcd41aff851fa3b1efc7e8319974145977683",
+      "mode": "0o644"
+    },
+    {
+      "path": "docs/macos.md",
+      "sha256": "aada31500f8fa94a7a959d94dff1ef75c049e5bcb3632c780370c0d01d6b846b",
+      "mode": "0o644"
+    },
+    {
+      "path": "macos/shortcuts.cjs",
+      "sha256": "87ec8d2e271e1b01bdeb90a6d9a8c324b5735c2b75d10fff5a3550ee0e40f5dd",
+      "mode": "0o644"
+    },
+    {
+      "path": "macos/startup/bridge",
+      "sha256": "f17dc1225d47a4e91502a552d59b1777c21db26822bc04491732aff30f66fe40",
+      "mode": "0o755"
+    },
+    {
+      "path": "macos/startup/controller.cjs",
+      "sha256": "c0fa29a957a74a680c15fefa4200ffc7d46cebad110c0cfba137e6b709196b52",
+      "mode": "0o644"
+    },
+    {
+      "path": "macos/startup/watch.cjs",
+      "sha256": "27ba8274aacf07b1af69b9f2977cc6f41b83b9540a1fdd71ff9c7e38e665961a",
+      "mode": "0o644"
+    },
+    {
+      "path": "manage.cjs",
+      "sha256": "1db3f51c776943b39e142e75095ae3e9d0fa9815bcc11a4b564d0e90dd222fbe",
+      "mode": "0o644"
+    },
+    {
+      "path": "scripts/mac-entry.sh",
+      "sha256": "5224797d4cee611ef8f8f82d53f8082ce1676ac7b537a6a288fa4b399684f7ab",
+      "mode": "0o755"
+    },
+    {
+      "path": "updater/core.cjs",
+      "sha256": "39470f1e71818cc91d21cbbdd935878f511c7e700d6d078c6721e2f5405efec9",
+      "mode": "0o644"
+    },
+    {
+      "path": "updater/run.sh",
+      "sha256": "836a13128240827a469c6a0e1300d709525c3a5d2b75eedbe7ea631b07765b54",
+      "mode": "0o755"
+    },
+    {
+      "path": "updater/worker.cjs",
+      "sha256": "4c9993085b6c75c8880308233500f97ccf1124dab1cac20fcff1bcca5fcbdb1d",
+      "mode": "0o644"
+    },
+    {
+      "path": "卸载.command",
+      "sha256": "46a0f170e6486da6f22559d1e8902ed84f19b97ba562011399165f5943799e61",
+      "mode": "0o755"
+    },
+    {
+      "path": "安装.command",
+      "sha256": "f7a54279c4db5b7822c4a7445efdc1d7aaaf56a8ced4557677214f74e25538e2",
+      "mode": "0o755"
+    },
+    {
+      "path": "诊断.command",
+      "sha256": "68ce360c8b15832297d766751eefe247927b2b08e35aba94eddc077b5f069010",
+      "mode": "0o755"
+    }
+  ]
+}
