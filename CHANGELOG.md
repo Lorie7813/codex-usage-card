@@ -1,6 +1,6 @@
 # Changelog
 
-## v0.9.4 Beta — first public candidate (macOS)
+## v0.9.4 Beta — first public release (macOS, 2026-10-28)
 
 - Usage-only sidebar card with remaining-rate-limit ring(s); separate 5-hour and weekly rings when the rate-limit response supports them.
 - Light/dark theme, keyboard focus and tooltips. UI component version: 53.
