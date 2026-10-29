@@ -1,7 +1,7 @@
 {
   "product": "Codex Usage Card",
   "version": "0.9.4",
-  "channel": "Beta public candidate",
+  "channel": "Beta public release",
   "platform": "macOS",
   "archive": "CodexUsageCard-macOS-0.9.4.zip",
   "sha256": "e41cbb00fd01b785eb0cac73a946115a35dd2d9a2410c196ec7287ce4b1737f8",
