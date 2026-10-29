@@ -1,6 +1,6 @@
 # Security & Privacy
 
-Codex Usage Card is an **unofficial macOS add-on**. This page describes the **v0.9.4 Beta public candidate**, not a security guarantee for every computer, package, or future Codex release. This version has been installed and checked on one Mac: launch from the original Codex icon, automatic Ring display, usage readings and UI VERSION 53 all passed. Startup takes a few seconds longer than the previous version; this is a known experience difference. Other devices and future Codex versions remain unverified. The add-on has **not been Apple-notarized**.
+Codex Usage Card is an **unofficial macOS add-on**. This page describes the **v0.9.4 Beta public release**, not a security guarantee for every computer, package, or future Codex release. This version has been installed and checked on one Mac: launch from the original Codex icon, automatic Ring display, usage readings and UI VERSION 53 all passed. Startup takes a few seconds longer than the previous version; this is a known experience difference. Other devices and future Codex versions remain unverified. The add-on has **not been Apple-notarized**.
 
 ## What it accesses
 
@@ -24,7 +24,7 @@ The native helper is ad-hoc signed, **not Apple-notarized**. The add-on relies o
 
 ## Updates and local files
 
-Automatic update execution remains disabled. This candidate omits legacy update shortcuts and the old `update.json`. Updater modules are retained for compatibility, installation locking, ownership checks, and safely disabling/quarantining a verified owned old updater. Their presence does not enable updates. Download future versions manually only after verifying their source and checksums.
+Automatic update execution remains disabled. This release omits legacy update shortcuts and the old `update.json`. Updater modules are retained for compatibility, installation locking, ownership checks, and safely disabling/quarantining a verified owned old updater. Their presence does not enable updates. Download future versions manually only after verifying their source and checksums.
 
 Operational files and logs may reside in `~/Library/Application Support/CodexUsageBadge`, `~/Library/LaunchAgents`, `~/Library/Logs`, and `~/Library/Caches`. Some may reveal local paths, launch details or usage metadata. **Do not share them without careful redaction.**
 
