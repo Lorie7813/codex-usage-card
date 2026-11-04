@@ -8,6 +8,8 @@ Codex Usage Card is an **unofficial macOS add-on** for the Codex desktop app. It
 
 ## Features
 
+An experimental community Windows port is available for review in [windows/](windows/README.md). It is separate from the supported macOS Beta release; see its validation limits and reset-card authentication disclosure before use.
+
 - Remaining usage as a percentage, not context-window size or conversation tokens.
 - Separate 5-hour and weekly usage rings when the account and available rate-limit data support them. Other accounts may show one ring or unavailable data.
 - Reset-time details on hover or keyboard focus, when provided by the client.
