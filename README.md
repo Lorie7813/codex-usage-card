@@ -4,7 +4,7 @@
 
 Codex Usage Card is an **unofficial macOS add-on** for the Codex desktop app. It displays your remaining usage allowance as compact progress rings in the sidebar, without adding a separate app icon.
 
-**Status:** v0.9.4 Beta publicly released on 2026-10-28 · macOS only. This version has been installed and checked on one Mac: launch from the original Codex icon, automatic Ring display, usage readings and UI VERSION 53 all passed. Startup takes a few seconds longer than the previous version; this is a known experience difference. Other devices and future Codex versions remain unverified. This project is **not affiliated with or endorsed by OpenAI**.
+**Status:** [v0.9.5 Beta](https://github.com/Lorie7813/codex-usage-card/releases/tag/v0.9.5-beta.1) publicly released on 2026-11-04 · macOS only · UI55. This is the final planned version; continued maintenance and compatibility with future Codex versions are not promised. The helper is ad-hoc signed and not Apple-notarized. This project is **not affiliated with or endorsed by OpenAI**. The [v0.9.4 Beta Release](https://github.com/Lorie7813/codex-usage-card/releases/tag/v0.9.4-beta.1) remains available.
 
 ## Features
 
@@ -24,11 +24,11 @@ Codex Usage Card is an **unofficial macOS add-on** for the Codex desktop app. It
 
 ## Install (macOS)
 
-1. Download the macOS ZIP and `SHA256SUMS.txt` from the [published v0.9.4 Beta Release](https://github.com/Lorie7813/codex-usage-card/releases/tag/v0.9.4-beta.1).
+1. Download the macOS ZIP and `SHA256SUMS.txt` from the [published v0.9.5 Beta Release](https://github.com/Lorie7813/codex-usage-card/releases/tag/v0.9.5-beta.1).
 2. Verify the ZIP checksum against the separately published SHA256 value, then fully extract it:
 
    ```bash
-   shasum -a 256 CodexUsageCard-macOS-0.9.4.zip
+   shasum -a 256 CodexUsageCard-macOS-0.9.5.zip
    ```
 
 3. With the extracted release open, run `安装.command` (Install), or use the terminal in the folder containing `manage.cjs`:
@@ -55,7 +55,7 @@ node manage.cjs uninstall
 
 The status output can contain local paths, account or usage metadata, and installation details. **Remove private information before sharing it.** Uninstall stops the add-on tasks and moves relevant installed files/logs and any verified owned legacy launcher entries to the Trash; it does not uninstall Codex.
 
-Automatic updates are **disabled** in this Beta. This release omits legacy update shortcuts and the old update metadata. Updater modules remain only for compatibility, locking, ownership checks and safely disabling/quarantining an owned old updater. Obtain future versions manually from this project's Releases page and verify their checksums.
+v0.9.5 provides **no in-app version checks or update notifications**; quota refresh remains active. Historical automatic updates remain **disabled**. Updater modules remain only for compatibility, locking, ownership checks and safely disabling/quarantining an owned old updater. Necessary emergency fixes may be published manually on GitHub; continued maintenance and future Codex compatibility are not promised.
 
 ## Privacy and limitations
 
@@ -77,7 +77,7 @@ Distributed under the applicable [MIT license](LICENSE). The original copyright 
 
 **Codex Usage Card** 是一款非官方 macOS 插件，可在 Codex 桌面客户端的侧栏显示**剩余额度**。支持在相应账号数据可用时分别显示 5 小时、每周额度圆环，并提供重置时间提示。
 
-**当前版本：v0.9.4 Beta 已公开发布（2026 年 10 月 28 日），仅针对 macOS 维护。** 已在一台 Mac 上实际安装，原 Codex 图标启动、Ring 自动显示、额度读取和 UI VERSION 53 均通过。启动比原版本慢几秒，记录为已知体验差异；其他设备和未来 Codex 版本未验证。
+**当前版本：v0.9.5 Beta 已公开发布（2026 年 11 月 4 日），仅适用于 macOS，UI VERSION 55。** 这是最终计划版本，不承诺持续维护或未来 Codex 兼容性；helper 为 ad-hoc 签名，未经 Apple 公证。真实单环及自然 CDP 断连恢复未专项验证。旧版 v0.9.4 Release 保留。
 
 **安装方法：** 从本项目 Releases 下载 macOS ZIP 和 SHA256 校验信息，核对后完整解压。在解压目录运行 `安装.command`，或使用 Node.js 24+ 执行 `node manage.cjs install`。保存工作并按 **⌘Q** 退出 Codex，再点击**原来的 Codex 图标**启动。为连接本地调试接口，插件可能在符合安全条件时自动重新打开一次客户端。
 
