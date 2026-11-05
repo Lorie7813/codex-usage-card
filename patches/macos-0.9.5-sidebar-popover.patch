@@ -1,0 +1,64 @@
+--- a/agent.cjs
++++ b/agent.cjs
+@@ -181,7 +181,7 @@
+ }
+ 
+ function installUsageBadge() {
+-  const VERSION = 55;
++  const VERSION = 56;
+   const KEY = '__codexUsageBadge';
+   if (window[KEY]?.version === VERSION && window[KEY]?.scope === 'quota-only') {
+     window[KEY].place();
+@@ -327,7 +327,8 @@
+   let footer = null;
+   let mountReason = 'not-placed';
+   let disposed = false;
+-  const nativeOverlaySelector = '[role="menu"], [role="listbox"], [role="dialog"], [role="alertdialog"], [aria-modal="true"], dialog[open], [popover]';
++  const blockingOverlaySelector = '[role="menu"], [role="listbox"], [role="dialog"], [role="alertdialog"], [aria-modal="true"], dialog[open]';
++  const nativeOverlaySelector = `${blockingOverlaySelector}, [popover]`;
+   let observedOverlayNodes = new Set();
+   const owned = el => !!el && [badge, tooltip, style].some(surface => surface === el || surface.contains(el));
+   // A dead agent must not leave a healthy-looking quota indefinitely.
+@@ -357,7 +358,8 @@
+     }
+     return true;
+   };
+-  function nativeOverlayOpen() {
++  function nativeOverlayOpen(surface = badge) {
++    const surfaceRect = surface.getBoundingClientRect();
+     return [...document.querySelectorAll(nativeOverlaySelector)].some(el => {
+       if (owned(el) || !el.isConnected) return false;
+       const r=el.getBoundingClientRect();
+@@ -372,8 +374,13 @@
+           if (['hidden','clip','auto','scroll'].includes(css.overflowY)) { top=Math.max(top,clip.top);bottom=Math.min(bottom,clip.bottom); }
+         }
+       }
+-      // Yield even when only part of native UI is visible; Ring visibility is stricter.
+-      return right > left && bottom > top;
++      if (right <= left || bottom <= top) return false;
++      // Menus and dialogs keep priority. A plain popover in another part of
++      // the window should not hide the card or its tooltip.
++      if (el.matches(blockingOverlaySelector)) return true;
++      return surfaceRect.width > 0 && surfaceRect.height > 0 &&
++        right > surfaceRect.left && left < surfaceRect.right &&
++        bottom > surfaceRect.top && top < surfaceRect.bottom;
+     });
+   }
+   function yieldToNativeOverlay() {
+@@ -437,6 +444,7 @@
+     tooltip.style.left = `${Math.max(8, Math.min(r.right + 12, innerWidth - tooltip.offsetWidth - 8))}px`;
+     const top = Math.max(8, Math.min(ringCenterY - tooltip.offsetHeight / 2, innerHeight - tooltip.offsetHeight - 8));
+     tooltip.style.top = `${top}px`;
++    if (nativeOverlayOpen(tooltip)) hideTooltip();
+   }
+   function showTooltip() {
+     clearTimeout(hoverTimer);
+@@ -754,7 +762,7 @@
+           // and retain only a fixed reason code (never host DOM, paths or account text).
+           const checked=(await session.evaluate('window.__codexUsageBadge?.status() ?? null'))?.result?.value;
+           const allowed=new Set(['mounted','not-placed','no-visible-rail','no-valid-footer','no-safe-space','occluded-or-clipped']);
+-          const mounted=checked?.placed === true && checked?.badgeCount === 1 && checked?.version === 55;
++          const mounted=checked?.placed === true && checked?.badgeCount === 1 && checked?.version === 56;
+           const reason=mounted?'mounted':allowed.has(checked?.mountReason)?checked.mountReason:'no-verified-ui';
+           this.mountStatus.set(t.id,{mounted,reason});
+           if(this.stopped){session.close();return;}
